@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+    function DonutShop(name, minc, maxc, donuts, hours) {
+
+      this.name = name;
+      this.customers = function() {
+        return Math.floor(Math.random() * (maxc - minc + 1)) + minc;
+      };
+
+      this.donutsPerCustomer = donuts;
+      this.hoursOpen = hours;
+
+      this.bakePerHour = function() {
+        return Math.ceil(this.customers() * this.donutsPerCustomer);
+      };
+      this.bakePerDay = function() {
+        return Math.ceil(this.bakePerHour() * hours);
+      };
+      this.message = this.name + " should bake " + this.bakePerHour() + " donuts per hour and " + this.bakePerDay() + " donuts per day.";
+    }
+
+    var downtown = new DonutShop("Downtown", 8, 43, 4.5, 12);
+    var capHill = new DonutShop("Capitol Hill", 4, 37, 2, 12);
+    var slu = new DonutShop("South Lake Union", 9, 23, 6.33, 12);
+    var wedgewood = new DonutShop("Wedgewood", 2, 28, 1.25, 12);
+    var ballard = new DonutShop("Ballard", 8, 58, 3.75, 12);
+
+    var shops = [downtown, capHill, slu, wedgewood, ballard];
+
+    for (var i = 0; i < shops.length; i++) {
+      console.log(shops[i].message);
+    }
+
+
+  </script>
+</body>
+</html>
