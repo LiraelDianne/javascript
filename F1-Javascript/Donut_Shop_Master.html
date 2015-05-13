@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+    function DonutShop(name, minc, maxc, donuts, hours) {
+
+      this.name = name;
+      this.customers = function() {
+        var avgCust = Math.floor(Math.random() * (maxc - minc + 1)) + minc;
+        return avgCust;
+      };
+
+      this.donutsPerCustomer = donuts;
+      this.hoursOpen = hours;
+
+      //I put this in a variable so I could retrieve the same number when I calculate the donuts per day
+      this.donutsPerHour = Math.ceil(this.customers() * this.donutsPerCustomer);
+      this.getDonutsPerHour = function() {
+        return this.donutsPerHour;
+      };
+
+      this.getDonutsPerDay = function() {
+        return Math.ceil(this.getDonutsPerHour() * hours)
+      };
+
+      this.message = this.name + " should bake " + this.donutsPerHour + " donuts per hour and " + this.getDonutsPerDay() + " donuts per day.";
+    }
+
+    var downtown = new DonutShop("Downtown", 8, 43, 4.5, 12);
+    var capHill = new DonutShop("Capitol Hill", 4, 37, 2, 12);
+    var slu = new DonutShop("South Lake Union", 9, 23, 6.33, 12);
+    var wedgewood = new DonutShop("Wedgewood", 2, 28, 1.25, 12);
+    var ballard = new DonutShop("Ballard", 8, 58, 3.75, 12);
+
+    function DonutMaster() {
+      this.shopList = [downtown, capHill, slu, wedgewood, ballard];
+      this.addShop = function(varName, name, minc, maxc, donuts, hours) {
+        var varName = new DonutShop(name, minc, maxc, donuts, hours);
+        this.shopList.push(varName);
+      };
+      //Trying another function for fun
+      this.removeShop = function(varName) {
+        for (var i = 0; i < this.shopList.length; i++) {
+          if (this.shopList[i] == varName) {
+            this.shopList.splice(i, 1);
+          }
+        }
+      }
+
+      this.generateReport = function(shopList) {
+        for (var i = 0; i < this.shopList.length; i++) {
+        console.log(this.shopList[i].message);
+        }
+      }
+    }
+    var master = new DonutMaster;
+
+    //Testing my three functions
+    master.addShop("greenlake", "Greenlake", 3, 42, 3.5, 12);
+    master.removeShop(wedgewood);
+    master.generateReport();
+
+  </script>
+</body>
+</html>
