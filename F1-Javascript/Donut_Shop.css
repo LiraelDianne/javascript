@@ -1,0 +1,35 @@
+body {
+  font-family:arial, sans-serif;
+  font-size: 20;
+}
+
+table {
+  color: #EEF2CE;
+  background-color: #702E2D;
+  border-spacing: 0px;
+  border: 10px double #EEF2CE;
+  border-radius: 15px;
+}
+
+.even {
+  background-color: #661614;
+}
+
+th {
+  font-weight:normal;
+}
+
+thead th {
+  font-weight: bold;
+  color: #739899;
+  padding: 7px 10px;
+}
+
+#location {
+  padding: 7px 50px;
+}
+
+td {
+  padding: 3px 10px;
+  text-align: right;
+}
