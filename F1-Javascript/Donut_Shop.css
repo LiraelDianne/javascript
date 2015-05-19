@@ -9,14 +9,18 @@ table {
   border-spacing: 0px;
   border: 10px double #EEF2CE;
   border-radius: 15px;
+  width:500px;
 }
 
 .even {
   background-color: #661614;
 }
 
-th {
+tbody th {
   font-weight:normal;
+  width:145px;
+  padding:5px 10px;
+  float:left;
 }
 
 thead th {
@@ -27,6 +31,7 @@ thead th {
 
 #location {
   padding: 7px 50px;
+  float: left;
 }
 
 td {
