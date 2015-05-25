@@ -9,7 +9,6 @@ table {
   border-spacing: 0px;
   border: 10px double #EEF2CE;
   border-radius: 15px;
-  width:500px;
 }
 
 .even {
@@ -18,9 +17,8 @@ table {
 
 tbody th {
   font-weight:normal;
-  width:145px;
+  width:130px;
   padding:5px 10px;
-  float:left;
 }
 
 thead th {
@@ -30,11 +28,21 @@ thead th {
 }
 
 #location {
-  padding: 7px 50px;
-  float: left;
+
 }
 
 td {
   padding: 3px 10px;
   text-align: right;
+}
+
+.edit {
+  color: #739899;
+  font-weight: bold;
+  padding: 0px;
+  text-align:left;
+}
+
+.invisible {
+  color: #702E2D;
 }
